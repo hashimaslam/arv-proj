@@ -65,12 +65,12 @@ def generate_desc(model, tokenizer, photo, max_length):
 
 if __name__ == "__main__":
     model_name = sys.argv[1]
-    load_tokanizer = '/home/astron/Desktop/Thesis/Thesis_final/Dataset/Model/' + \
+    load_tokanizer = '/Models/' + \
         model_name+'/tokanizer.pkl'
     tokenizer = load(open(load_tokanizer, 'rb'))
     max_length = 57
     model = load_model(
-        '/home/astron/Desktop/Thesis/IMC/Dataset/Model/'+model_name+'/model_16.h5')
+        '/Models/'+model_name+'/model_16.h5')
     photo = extract_features(sys.argv[2], model_name)
     description = generate_desc(model, tokenizer, photo, max_length)
     print(description)

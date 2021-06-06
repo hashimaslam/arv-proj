@@ -1,4 +1,7 @@
 <!doctype html>
+<head>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
 <title>Python Flask File Upload Example</title>
 <h2>Select a file to upload</h2>
 <p>
@@ -23,7 +26,17 @@
 			<input type="file" name="file" autocomplete="off" required>
 		</p>
     </dl>
-    <p>
+	<div>
+		Choose a Model<SELECT name="model">
+			{% for c in modelList %}
+				<OPTION value={{c}} >{{c}}</option>
+			{% endfor %}
+		</SELECT>
+	</div>
+   <p>
 		<input type="submit" value="Submit">
 	</p>
 </form>
+<div>
+	{{result}}
+</div>
